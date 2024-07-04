@@ -58,12 +58,11 @@ function getCountryData() {
 
         const heading = document.createElement("h3");
         heading.innerText = (i + 1) + " . " + result[i].name.common;
-        heading.innerText = result[country.population];
 
-
-        const paragraph = document.createElement('p');
-        paragraph.innerText = 'population: ' + country.population; 
-    
+        const paragraph = document.createElement("p");
+        paragraph.innerText = 'population:' + result[i].population; 
+      
+        
        
 
 
