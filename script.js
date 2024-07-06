@@ -3,7 +3,7 @@
 // Test your function by calling it and using .then() to log the resolved value to the console.  
 
 const printing = new Promise((resolve, reject) => {
-   setTimeout(() => {
+  setTimeout(() => {
     resolve('Data fetched successfully')
   }, 2000)
 }).then((result) => {
@@ -27,16 +27,17 @@ const printer = new Promise((resolve, reject) => {
 // 3. Convert the fetch Data function from Question  1 to use async and await instead of .then().
 //Ensure to handle errors using try and catch.
 
-function fetchData(){
+function fetchData() {
   return new Promise((resolve, reject) => {
-      setTimeout(()=>{resolve("Data Fetched Successfully Again")},3000)
-  })}
-     async function cab(){
-      const result=await fetchData()
-      console.log(result)
-      // console.log('waited')
-  }
-  cab();
+    setTimeout(() => { resolve("Data Fetched Successfully Again") }, 3000)
+  })
+}
+async function cab() {
+  const result = await fetchData()
+  console.log(result)
+  // console.log('waited')
+}
+cab();
 
 
 // 4. Write a function "getCountryData" that fetches data from the public API "https://restcountries.com/v3.1/all&quot;.
@@ -59,22 +60,33 @@ function getCountryData() {
         const heading = document.createElement("h3");
         heading.innerText = (i + 1) + " . " + result[i].name.common;
 
-        const paragraph = document.createElement("p");
-        paragraph.innerText = 'population:' + result[i].population; 
-      
-        
-       
+        const heading1 = document.createElement("h3");
+        heading1.innerText = 'population :' + result[i].population;
+        const heading2 = document.createElement("h3")
+        heading2.innerText = 'Region :' + result[i].population;
+        const heading3 = document.createElement("h3")
+        heading3.innerText = 'Flag:' + result[i].flag;
+        const heading4 = document.createElement("h3")
+        heading4.innerText = 'Countries Area :' + result[i].area;
+        const heading5=document.createElement("h3")
+        heading5.innerText='Independent Countries :'+ result[i].independent;
+
 
 
         imagecontainer.appendChild(heading);
-        imagecontainer.appendChild(paragraph);
+        imagecontainer.appendChild(heading1);
+        imagecontainer.appendChild(heading2);
+        imagecontainer.appendChild(heading3);
+        imagecontainer.appendChild(heading4);
+        imagecontainer.appendChild(heading5);
+
 
 
         const image = document.createElement("img");
         image.src = result[i].flags.png;
         image.className = "flags";
 
-  
+
 
         imagecontainer.appendChild(image);
 
