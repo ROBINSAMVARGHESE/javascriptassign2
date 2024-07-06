@@ -68,17 +68,18 @@ function getCountryData() {
         heading3.innerText = 'Flag:' + result[i].flag;
         const heading4 = document.createElement("h3")
         heading4.innerText = 'Countries Area :' + result[i].area;
-        const heading5=document.createElement("h3")
-        heading5.innerText='Independent Countries :'+ result[i].independent;
+        const heading5 = document.createElement("h3")
+        heading5.innerText = 'Independent Countries :' + result[i].independent;
         const languages = document.createElement('h4');
-            if (result[i].languages) {
-                const languageList = Object.values(result[i].languages).join(', ');
-                languages.innerText = 'Languages: ' + languageList;
-            } else {
-                languages.innerText = 'Languages: Not available';
-            }
+        if (result[i].languages) {
+          const languageList = Object.values(result[i].languages).join(', ');
+          languages.innerText = 'Languages: ' + languageList;
+        } else {
+          languages.innerText = 'Languages: Not available';
+        }
+        const heading6 = document.createElement("h3")
+        heading5.innerText = 'Subregion-Countries:' + result[i].subregion;
 
-           
 
 
         imagecontainer.appendChild(heading);
@@ -87,8 +88,8 @@ function getCountryData() {
         imagecontainer.appendChild(heading3);
         imagecontainer.appendChild(heading4);
         imagecontainer.appendChild(heading5);
+        imagecontainer.appendChild(heading6);
         imagecontainer.appendChild(languages);
-       // imageContainer.appendChild(languages);
         document.getElementById('container').appendChild(imagecontainer);
 
 
